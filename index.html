@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Lunedì 12 ottobre 2026 · 9 notizie · a cura di Fabio Ceseri">
+<meta name="theme-color" content="#10264d">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icone/icon-192.png">
+<link rel="apple-touch-icon" href="icone/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Rassegna FdI">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Rassegna FdI Toscana">
+<meta property="og:description" content="Lunedì 12 ottobre 2026 · 9 notizie · a cura di Fabio Ceseri">
+<meta property="og:url" content="https://cicci61.github.io/rassegna-fdi/">
+<meta property="og:image" content="https://cicci61.github.io/rassegna-fdi/icone/anteprima.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+body { margin: 0; }
+.testata { padding-top: env(safe-area-inset-top, 0px); }
+.installa { max-width: 760px; margin: 14px auto 0; display: flex; align-items: center; gap: 12px; background: var(--paper); border: 1px solid var(--accent); border-radius: 14px; padding: 12px 14px; font-size: 14.5px; }
+.installa img { width: 40px; height: 40px; border-radius: 9px; flex: 0 0 auto; }
+.installa p { margin: 0; flex: 1; }
+.installa button { font: 600 14.5px var(--body); border-radius: 999px; padding: 8px 14px; cursor: pointer; border: 1px solid var(--accent); }
+.installa .si { background: var(--accent); color: var(--paper); }
+.installa .no { background: transparent; color: var(--muted); border-color: transparent; font-size: 20px; padding: 2px 8px; }
+</style>
+</head>
+<body>
+<title>Rassegna FdI Toscana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: testata blu a tutta larghezza con tricolore, sommario fisso scorrevole, sezioni come fogli di rassegna con voci numerate ("comunicato sulla 7") */
+:root {
+  --bg: #eef1f6;
+  --paper: #ffffff;
+  --ink: #111c2e;
+  --muted: #5a6880;
+  --rule: #dde3ec;
+  --accent: #1d4a96;
+  --accent-soft: #e6edf8;
+  --testata: #10264d;
+  --testata-ink: #ffffff;
+  --testata-muted: #b7c5de;
+  --verde: #1f8a4c;
+  --wa: #1c9a52;
+  --rosso: #c4162a;
+  --flag-mid: #ffffff;
+  --display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b111c; --paper: #131c2c; --ink: #e5ebf4; --muted: #94a3ba; --rule: #243149;
+    --accent: #8db2f3; --accent-soft: #1b2843; --testata: #0f1f3d; --testata-ink: #f2f5fa; --testata-muted: #9fb0cf;
+    --verde: #4cc485; --wa: #1c9a52; --rosso: #f0606f; --flag-mid: #e9edf2;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b111c; --paper: #131c2c; --ink: #e5ebf4; --muted: #94a3ba; --rule: #243149;
+  --accent: #8db2f3; --accent-soft: #1b2843; --testata: #0f1f3d; --testata-ink: #f2f5fa; --testata-muted: #9fb0cf;
+  --verde: #4cc485; --wa: #1c9a52; --rosso: #f0606f; --flag-mid: #e9edf2;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; padding-inline: 16px; padding-block: 0 56px; -webkit-text-size-adjust: 100%; }
+.wrap { max-width: 760px; margin: 0 auto; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+/* Testata */
+.testata { background: var(--testata); color: var(--testata-ink); margin-inline: -16px; padding-inline: 16px; }
+.testata-in { max-width: 760px; margin: 0 auto; padding-block: 26px 22px; }
+.flag { display: grid; grid-template-columns: 1fr 1fr 1fr; height: 6px; margin-inline: -16px; }
+.flag span:nth-child(1) { background: var(--verde); }
+.flag span:nth-child(2) { background: var(--flag-mid); }
+.flag span:nth-child(3) { background: var(--rosso); }
+.eyebrow { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--testata-muted); }
+h1 { font-family: var(--display); font-weight: 800; font-size: clamp(40px, 11vw, 60px); line-height: .92; margin: 10px 0 12px; letter-spacing: .005em; text-transform: uppercase; text-wrap: balance; }
+h1 span { display: block; color: var(--testata-muted); font-weight: 600; font-size: .55em; letter-spacing: .04em; margin-top: 4px; }
+.edizione { font-family: var(--display); font-weight: 600; font-size: 22px; margin: 0; letter-spacing: .01em; }
+.generato { font-family: var(--mono); font-size: 12px; color: var(--testata-muted); margin-top: 4px; font-variant-numeric: tabular-nums; }
+
+/* Sommario fisso */
+nav.sommario { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); margin-inline: -16px; padding: 10px 16px; border-bottom: 1px solid var(--rule); }
+nav.sommario .chips { max-width: 760px; margin: 0 auto; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+nav.sommario .chips::-webkit-scrollbar { display: none; }
+nav.sommario a { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 7px; padding: 7px 13px; border: 1px solid var(--rule); border-radius: 999px; background: var(--paper); color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 500; white-space: nowrap; }
+nav.sommario a b { font-family: var(--mono); font-weight: 500; font-size: 11.5px; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 1px 7px; font-variant-numeric: tabular-nums; }
+nav.sommario a.zero { color: var(--muted); }
+nav.sommario a.zero b { color: var(--muted); background: transparent; }
+
+/* Sezioni */
+main { display: grid; gap: 22px; padding-top: 20px; }
+section { scroll-margin-top: 70px; }
+.sez-testa { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 4px; }
+h2 { font-family: var(--display); font-weight: 700; font-size: 28px; line-height: 1.05; margin: 0; letter-spacing: .01em; text-transform: uppercase; text-wrap: balance; }
+.conta { font-family: var(--mono); font-size: 12px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.sez-nota { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+h3 { font-family: var(--display); font-weight: 600; font-size: 15px; text-transform: uppercase; letter-spacing: .08em; margin: 0; padding: 10px 16px 0; color: var(--accent); }
+.foglio { background: var(--paper); border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; }
+.foglio + .foglio { margin-top: 10px; }
+
+ol.voci { list-style: none; margin: 0; padding: 0; }
+.voce { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; padding: 14px 16px; border-top: 1px solid var(--rule); }
+h3 + ol.voci .voce:first-child { border-top: 0; }
+ol.voci > .voce:first-child { border-top: 0; }
+.num { font-family: var(--mono); font-weight: 500; font-size: 13px; color: var(--accent); background: var(--accent-soft); border-radius: 8px; width: 34px; height: 30px; display: grid; place-items: center; font-variant-numeric: tabular-nums; }
+.voce h4 { margin: 0; font-size: 16.5px; font-weight: 600; line-height: 1.35; text-wrap: pretty; }
+.voce h4 a { color: var(--ink); text-decoration: none; display: block; }
+.voce h4 a:hover { color: var(--accent); }
+.meta { font-size: 12.5px; color: var(--muted); margin-top: 6px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.chi { font-weight: 600; color: var(--accent); }
+.meta .quando { font-family: var(--mono); font-size: 11.5px; font-variant-numeric: tabular-nums; }
+.sintesi { margin: 8px 0 0; font-size: 15px; color: var(--ink); }
+.altre { margin: 8px 0 0; font-size: 13px; color: var(--muted); }
+.altre a { color: var(--muted); }
+
+/* In evidenza */
+.evidenza .foglio { border-color: var(--accent); }
+.evidenza .voce:first-child h4 { font-family: var(--display); font-weight: 700; font-size: 25px; line-height: 1.1; }
+.evidenza .voce:first-child .num { background: var(--accent); color: var(--paper); }
+
+/* Spunti */
+.spunti ol { list-style: none; margin: 0; padding: 0; }
+.spunto { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; padding: 14px 16px; border-top: 1px solid var(--rule); }
+.spunto:first-child { border-top: 0; }
+.spunto p { margin: 0; font-size: 15px; }
+.istruzione { font-size: 13.5px; color: var(--muted); margin: 10px 2px 0; }
+
+/* WhatsApp */
+.wa-box { padding: 16px; display: grid; gap: 12px; }
+.wa-testo { white-space: pre-wrap; overflow-wrap: anywhere; font-family: var(--body); font-size: 15px; background: var(--bg); border-radius: 10px; padding: 12px 14px; margin: 0; }
+.wa-azioni { display: flex; flex-wrap: wrap; gap: 8px; }
+.wa-btn { font: 600 15px var(--body); padding: 11px 18px; border-radius: 999px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+
+.vuoto { color: var(--muted); font-style: italic; padding: 14px 16px; margin: 0; }
+footer { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 13.5px; color: var(--muted); display: grid; gap: 12px; }
+footer h2 { font-size: 18px; color: var(--ink); }
+footer ul { padding-left: 18px; margin: 0; }
+footer p { margin: 0; }
+details summary { cursor: pointer; color: var(--ink); font-weight: 500; padding-block: 6px; }
+details .monitor { font-size: 13px; columns: 2 240px; column-gap: 24px; margin-top: 8px; }
+details .monitor p { margin: 0 0 8px; break-inside: avoid; }
+@media (prefers-reduced-motion: no-preference) { nav.sommario a, .voce h4 a, .wa-btn { transition: color .15s, border-color .15s, background-color .15s; } }
+
+/* Telefono */
+@media (max-width: 640px) {
+  
+  .foglio { margin-inline: -6px; }
+}
+</style>
+
+<header class="testata">
+  <div class="flag" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="testata-in">
+    <div class="eyebrow">Rassegna stampa quotidiana · a cura di Fabio Ceseri</div>
+    <h1>Rassegna FdI<span>Toscana</span></h1>
+    <p class="edizione" id="edizione"></p>
+    <div class="generato" id="generato"></div>
+  </div>
+</header>
+<nav class="sommario" aria-label="Sommario"><div class="chips" id="sommario"></div></nav>
+<div class="wrap">
+  <main id="contenuto"></main>
+  <footer id="piede"></footer>
+</div>
+
+<script>
+const ED = {"edizione": "Lunedì 12 ottobre 2026", "generato": "12/10/2026 09:32", "evidenza": [1, 2, 7], "sezioni": [{"id": "nazionale", "titolo": "Nazionale", "gruppi": []}, {"id": "parlamentari", "titolo": "Parlamentari toscani", "nota": "Deputati, senatori ed europarlamentare FdI eletti in Toscana.", "gruppi": [{"titolo": "Giovanni Donzelli", "voci": [{"n": 1, "titolo": "Donzelli chiude a Vannacci: \"Non ci interessa vincere prendendo chi ci vota contro\". Poi difende i giovani di FdI (video)", "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQUnRfbW1OdVEtUkgwM3dwNE9QVERQeW1zMVdRbFFQY0kySWRmQlRsSE9pUVFpaG5BWld5OHB4YmViOTJ4bkNRZ0hNYzItc2w1V3VmQ1NramJJaGZhdWt4YnE1a1Raem5zRXYzc052Qno0X0ZlNld6VFUxSThpTFB4MkZscDFYT0J3cFhWVUoyWF9YNFRlOS1SZm1jS05CUzBncENJRGp2YXl2SEFfWEJzbjVQSnhwVldMNjhybVVvVDA2NjJtNVJSLVdXTUQ0WjhPeVVXekplOVdxbWVSNEUtaw?oc=5", "fonte": "Secolo d'Italia", "data": "11/10 12:37", "chi": "Giovanni Donzelli", "sintesi": "All'evento di Fanpage Donzelli esclude Vannacci come alleato: per FdI viene prima la credibilità.", "altre_fonti": [{"fonte": "Agenda Politica", "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOYjZ2YVZRdHN4RFM4cU5sOHYtRHptVkJzaHBQQ1JjeTlKRmRvSjBJSW02ODBvOWNUMmRRTm96R3FQVi1fdDdjbU96ZEpFZV9YbFZUekJ0bm9uZnZSYVA1c3hvMmJPYU0zTk5ZXzJQWGdjOEpGMjY5MExpWWJTd3M4V3pqcXEybWZhMEU3by1fOWx4dmxnc2dlWnZ3aExIbHk3WE5iOWRYYklESXY5LU1kcXpHYXhtWmt5YkVmNUJB?oc=5"}, {"fonte": "Zazoom Social News", "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOcjBUYlk0UTZBX3Q1TDIzY0VUaURLdXV1c3dtcjEtRDY1N09pWi1keVFHM3NvZ1dBckEzWVk0MjZKb09HYW5iWDdqM3VLUndGSU5XdXVQRVd5bXNUYTQ4cUM1eGdNVmVaZlF3dXdSejF3c1pmV2VCQklqeHJHa0h3TkY0WHQwSHp5NzdfLXhqYzhpWFk2bUNCZENkZXpKcUdpM1QtNFp4NjBRWm8?oc=5"}]}, {"n": 2, "titolo": "Elezioni, Donzelli: \"Avanti fino a novembre 2027\"", "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQdVZYTFdOcHltcHktOTh3ZlAwTG1oSjQzbk5XMmRWSTV0SVdQSHZNVWZNNGpkT3VvakRraUtWckxaSUFfZE5QQWI4NmxXQ0hydXR4ZkhDVkVxLVNwSXgzcVZ5QnRtZ2FRaWZVaWlrWGhoVS16U1huNlVHQ2FYRjBVZUFuV1ZqRC01SWpGUGFWemZfVHJYUF8xejdzUE1ucEtl?oc=5", "fonte": "Sky TG24", "data": "11/10 12:51", "chi": "Giovanni Donzelli", "sintesi": "", "altre_fonti": []}, {"n": 3, "titolo": "Giovanni Donzelli smaschera Cancellato: caos all'evento di Fanpage", "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOaXJ4dE1Id2ZZN0htSTJrNHpsdmZsQ09ERDdVbS1YakViaFR0QmpxNDhXZTdLSVBOUDJmdWtpQzljTlpCcHZ3UzV0bGN6cHkydnZoMTUxa0E4b0F5ZzEwWWw0M3hFWWx4a0tDdldGYnR3WEVtTk1lUUdYbGlIY2lxbVliRmc2TDRGZlo3SzJsWFMxX201aE9KdnVGNnRaeDFyNEdaNDFuRWnSAawBQVVfeXFMTU0xUmFEekZvVXhPekl1UXA5WFd4c0lGYmJNc0FBeUY2dV9uODFUbldjc3QxMWRILXo2R0h3SlRhaU1xdUctVkxxVVJZc2hoUmY5Y1pmeWExTFVManh2eXJXeHhKSVdMcEVjSXA0Zm1ZbUJ5djJDUGdqS0JlZnFBS2NqbUEzVEhoOEsyMXJjQXRjSl9HNFdpc3pDWWJhVzFiUEhIa2g3Yk1hVHZtTQ?oc=5", "fonte": "Libero Quotidiano", "data": "11/10 18:52", "chi": "Giovanni Donzelli", "sintesi": "", "altre_fonti": []}, {"n": 4, "titolo": "Ucraina, Donzelli (FdI): \"Trump? Prima la pace, poi le elezioni\"", "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZG10alNOb2l5cndOQjhVd2dvZER5RGNMMThFNU8yaWtGUFNkejh1bXQ3bG04M2dQUFFVQk9tVTNNdzdoeHFvZUJkRTAzSElGSER2MlhLMDd4VFJUYWxUb3p1Q29OU0Y2VXdGQU1OYjY0M1lMc2plWTU5a2F4SmxIRER3MC1uLVpIZnBCeGYxeG5qTXJFRVpvSzZZQnRVY0w4LTdVWW14dWRJUQ?oc=5", "fonte": "alanews", "data": "11/10 13:25", "chi": "Giovanni Donzelli", "sintesi": "", "altre_fonti": []}, {"n": 5, "titolo": "Corso di formazione riservato ai pro-Pal. A scuola l'assurda ghettizzazione della sinistra", "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOQ292R19ab3VhUUFqRk1Ldk9rMFF1dDE4anhZRENvVlFfRWhRbGJRRzNIYW4tV010OTRRR28wcGtmbzc0S3BKYmJMMWVycjNqR1ctYnAwZGl3MUNUejlOaEFwaWtIeURLczlQbGliRjg5OVJUQy1XVzFwend6Zk5ISXFPcF9hTDU5a2NTazZlVXF3T1Y2QUVsOFU1YXR6UF9uMWJINHp1MHVFUFdNNjBZUldNZmJuVzdLMFpUNC1ldW9VTmM3cDYxWU5NTHZGNEU?oc=5", "fonte": "Giovanni Donzelli", "data": "11/10 18:08", "chi": "Giovanni Donzelli", "sintesi": "", "altre_fonti": []}, {"n": 6, "titolo": "Corrado Augias riprende Donzelli: \"Una rilettura della Costituzione gli gioverebbe. Non si comanda, ma si governa\"", "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNWGxZeXJ6N3lPeEdELVE5cTlVaVA3UUNabzlwVGlGV3EtNGhtdGZNMldMXzIzRElSN1J1SEd4NndYSVlqZjZHb0xyZ0doQ3FkVkEtd3pnb0J2czQxNV9iRE9aeE1sVzljRG8tZmU5NlZIdXJiR1Y0RjZYTlJMeDBUcnExV1RRWDN5MjdzYmxSRnpfS3VtbzFMYjl6YjZyYWRvZ1cxM3pTSUFHeFJhd041WS1ndzdDRTNVX1J6dnA0MG5TdFNtVS1ERkl6QkFqTFhDRVktVEFIZUVEYWpBczVHdzR1VdIB6AFBVV95cUxQSk9oSzAxZjl6TnNnQmZuenhTOXNxYmNKeXM0YW45WjFkb21JdllWYlVjVl9sSHM5czFqbHVjUW94dExqdUpDR1pmSHlmcHN0N1FwWThzZEp3Q1lTbTNOb2Mzb1BXSUlVVVlfNGpxMkpISjZQQ1B2SXc5NFlwTGFDM3RDZTNvekdFdmNoYnVfSVBTZVlTM2VwanB3WC01SmdyeVdHeURXbHBYUDY1NnBHZGhGc3NFM2tRQzQxVGVLTG1zRUJrblBSQ1ZrWGtaa09RTklzMmhnX254NGVVS0NKbWdaYlJXMUot?oc=5", "fonte": "LA7", "data": "11/10 23:02", "chi": "Giovanni Donzelli", "sintesi": "", "altre_fonti": []}]}]}, {"id": "regione", "titolo": "Consiglio regionale", "nota": "Gruppo FdI in Consiglio regionale (13 consiglieri) e altre uscite FdI in Toscana.", "gruppi": [{"titolo": "Consiglieri regionali", "voci": [{"n": 7, "titolo": "Toscana, FdI presenta il conto a Giani: sanità in rosso, fabbriche in fuga, Fi-Pi-Li al palo. Tomasi: si vince con civici e terzo settore", "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOZVk1TzhsNVI3bE9MeG04dkJRRzVWMGNYNkNMRkFpeExtRV91anBKS2dDcUtaSm8tYlFJdE5uWUNya2lFaXh3OTY5ZXFfWWFrTXItWDRSOVpjNnI1UHRPOTAteFJ2UVl0TDVrcDUybXhjX0xTNW9HSkdtRUdObF9sQTlCWEtkRmFLWFRncWdIR3BQX00zeFRzSmZzYk1GaXd1c0FvdnczaUpqOE01a1lLd0tOdUhIcnM5SlA0blpaY0ZrUjlOdnJ5VkV3V2ZRUVNWdlVWRzNReWg3RklQc2ZKcWFXbm8zMzBCX2ZTZnpn0gHzAUFVX3lxTE5ZU2VSOE9EOVZYM09zMnV3SG0wcEJkT3Badk45ZGZmSWNxa0dwS3BOSDBTVEo1VGppd05wWm5RZHhwbTY2bUo3UmVDQVcyWVF5di1LdDlTanVESVV5QTY1U3YzR1dUS0IxV1dyM1RwQ1BhWjFzbm1RbGFaUjduTEdxeDRzVmhUREJRTEJaX3lWS1F1ZHBXYzlfbHpLYUVtU1g4c1pWTGxxa1EyTjkwUDJPV25TWlAyWnFMd1RaR3A5NlV0cXMxTnNtRW4xYmpuMlYzSDd3MGYwNjYtZklkRVgxYTJfdFVJbmE5bGtPaEdyY3lmSQ?oc=5", "fonte": "AdHoc News", "data": "11/10 10:32", "chi": "Alessandro Tomasi", "sintesi": "", "altre_fonti": []}, {"n": 8, "titolo": "Zoppini e Franchi: \"Bando per ex Stazione Tavarnuzze è andato deserto. Altro fallimento\"", "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOVkdqM0IzU3ZMMl9MMlZDTjVkd2phbVotUXM5Rk5ua1drTDFzbW1NYlBEbWRsSm9MdEtNR0JTZ0VZSmhuVWZLSmQ5ZW5pVG5KTFRVeFpXbGlBZFV1OE9NY0hSa1JKU0xDRlQ0d3BCRG9ncjJCWEJkLTYtaG1oWi1JRllkVkZEN3J3S1dxTGU3VmtaNGxCaWNfSWZORUh1WWl4eFcwYzdzUHJuV25XNmJFallVQUVIZV9GRVBEejhnUWh5aDlZRnNwbHN5NA?oc=5", "fonte": "Il Gazzettino del Chianti e delle colline fiorentine", "data": "11/10 15:52", "chi": "Matteo Zoppini", "sintesi": "", "altre_fonti": []}, {"n": 9, "titolo": "\"Livorno non è una città di serie B\". L'attacco di Marcella Amadio", "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1RSldxWk5IRC1OcUUtRE53aUl4a1ZCTjI5bEQzcDZqaTNmaUpJY1dGSE9Ld1ViVEw4R19qYURmdTczd1pqMTE5YW1lVjZKekFnWldZbHJyRVY0d0lrbHFTOU1FQ253THlPcjBXZkFDRUltZ0tjaUhzbWRZZDRXWWs?oc=5", "fonte": "Il Telegrafo di Livorno", "data": "11/10 07:06", "chi": "Marcella Amadio", "sintesi": "", "altre_fonti": []}]}]}, {"id": "metropolitana", "titolo": "Città Metropolitana di Firenze", "nota": "Consiglieri metropolitani FdI (gruppo Centrodestra e Civici per il Cambiamento) e uscite FdI sulla Città Metropolitana.", "gruppi": [], "vuoto": "Nessuna notizia nuova."}, {"id": "comuni", "titolo": "Comuni della Città Metropolitana", "nota": "I 15 Comuni con consiglieri eletti nella lista FdI.", "gruppi": [], "vuoto": "Nessuna notizia nuova."}], "spunti": [{"n": 7, "testo": "Proposta: un post del circolo che riprende il \"conto a Giani\" di Tomasi declinandolo sul Mugello (sanità e collegamenti). Prima di citare dati locali su liste d'attesa o servizi, andrebbero verificati sulle fonti ASL e regionali."}, {"n": 8, "testo": "Sul modello di Zoppini a Tavarnuzze, si potrebbe fare una ricognizione di immobili pubblici dismessi o bandi andati deserti a Borgo San Lorenzo, Scarperia e San Piero, da verificare sugli albi pretori prima di qualsiasi uscita."}, {"n": 2, "testo": "Con l'orizzonte di fine legislatura a novembre 2027 indicato da Donzelli, il circolo potrebbe organizzare un incontro pubblico sui risultati del governo per il territorio, chiedendo la presenza di un parlamentare toscano."}], "fonti_saltate": [], "monitorati": [{"gruppo": "Nazionale", "nomi": "fratelli-italia.it, giorgiameloni.it, La Gazzetta Tricolore (Gmail)"}, {"gruppo": "Deputati", "nomi": "Donzelli, Amorese, Michelotti, Zucconi, F. Rossi, Gori"}, {"gruppo": "Senatori", "nomi": "La Pietra, Marcheschi, Campione, S. Petrucci"}, {"gruppo": "Europarlamento", "nomi": "Torselli"}, {"gruppo": "Consiglio regionale", "nomi": "Tomasi, Amadio, Bulleri, Capecchi, Cellai, Fantozzi, Gemelli, La Porta, Minucci, D. Petrucci, Tucci, Veneri, Zoppini"}, {"gruppo": "Città Metropolitana", "nomi": "Scipioni (capogruppo), Cappelletti, Picchianti"}, {"gruppo": "Comuni (lista FdI)", "nomi": "Firenze, Bagno a Ripoli, Calenzano, Campi Bisenzio, Castelfiorentino, Certaldo, Empoli, Figline e Incisa, Fucecchio, Lastra a Signa, Pontassieve, Reggello, San Casciano, Scandicci, Sesto Fiorentino"}, {"gruppo": "Fonti dei nomi", "nomi": "dati aperti Camera, sito Consiglio regionale, Viminale (amministratori in carica al 24/08/2026), sito Città Metropolitana di Firenze (consiglio metropolitano, agg. 22/09/2026)"}], "nota": "Solo notizie con fonte reale e link. Ogni mattina alle 9:00 copre le ultime 24-36 ore, senza ripetere quelle già uscite. Oggi nessuna novità da fratelli-italia.it e giorgiameloni.it e nessuna nuova edizione della Gazzetta Tricolore negli ultimi 2 giorni. Scartate: Amadio sull'interrogazione per il nuovo ospedale di Livorno (già uscita il 9/10), Donzelli su via D'Amelio (contenuto del 19/07/2026 ripubblicato), una notizia FdI di Bassano del Grappa (Veneto, non Firenze).", "whatsapp": "Rassegna FdI Toscana di lunedì 12 ottobre\nIn evidenza: Donzelli chiude a Vannacci, \"Non ci interessa vincere prendendo chi ci vota contro\".\nLeggi qui: https://claude.ai/artifact/6jr9cLbVWxAzGwbUzewaUB"};
+const $ = (t, a = {}, ...figli) => {
+  const e = document.createElement(t);
+  for (const [k, v] of Object.entries(a)) { if (k === "class") e.className = v; else if (k === "html") e.innerHTML = v; else e.setAttribute(k, v); }
+  for (const f of figli) if (f != null) e.append(f);
+  return e;
+};
+const linkEsterno = (href, testo) => $("a", { href, target: "_blank", rel: "noopener" }, testo);
+const sezTesta = (titolo, conta) => $("div", { class: "sez-testa" }, $("h2", {}, titolo), conta != null ? $("span", { class: "conta" }, conta) : null);
+const notizie = n => n === 1 ? "1 notizia" : n + " notizie";
+
+function voce(v) {
+  const meta = $("div", { class: "meta" });
+  if (v.chi) meta.append($("span", { class: "chi" }, v.chi));
+  if (v.fonte) meta.append($("span", {}, v.fonte));
+  if (v.data) meta.append($("span", { class: "quando" }, v.data));
+  const corpo = $("div", { style: "min-width:0" }, $("h4", {}, linkEsterno(v.link, v.titolo)), meta);
+  if (v.sintesi) corpo.append($("p", { class: "sintesi" }, v.sintesi));
+  if (v.altre_fonti && v.altre_fonti.length) {
+    const p = $("p", { class: "altre" }, "Anche su: ");
+    v.altre_fonti.forEach((a, i) => { if (i) p.append(", "); p.append(linkEsterno(a.link, a.fonte)); });
+    corpo.append(p);
+  }
+  return $("li", { class: "voce", id: "n" + v.n }, $("div", { class: "num" }, String(v.n)), corpo);
+}
+function elenco(voci) { const ol = $("ol", { class: "voci" }); voci.forEach(v => ol.append(voce(v))); return ol; }
+
+const tutte = {};
+(ED.sezioni || []).forEach(s => (s.gruppi || []).forEach(g => (g.voci || []).forEach(v => tutte[v.n] = v)));
+const totale = Object.keys(tutte).length;
+
+document.getElementById("edizione").textContent = ED.edizione || "";
+document.getElementById("generato").textContent = [notizie(totale), ED.generato ? "aggiornata alle " + ED.generato.split(" ").pop() : ""].filter(Boolean).join(" · ");
+
+const main = document.getElementById("contenuto");
+const nav = document.getElementById("sommario");
+
+if (ED.evidenza && ED.evidenza.length) {
+  nav.append($("a", { href: "#evidenza" }, "In evidenza"));
+  main.append($("section", { id: "evidenza", class: "evidenza" }, sezTesta("In evidenza"),
+    $("div", { class: "foglio" }, elenco(ED.evidenza.map(n => tutte[n]).filter(Boolean)))));
+}
+(ED.sezioni || []).forEach(s => {
+  const n = (s.gruppi || []).reduce((t, g) => t + (g.voci || []).length, 0);
+  nav.append($("a", { href: "#" + s.id, class: n ? "" : "zero" }, s.titolo, $("b", {}, String(n))));
+  const sez = $("section", { id: s.id }, sezTesta(s.titolo, n ? notizie(n) : null));
+  if (s.nota) sez.append($("p", { class: "sez-nota" }, s.nota));
+  if (!n) sez.append($("div", { class: "foglio" }, $("p", { class: "vuoto" }, s.vuoto || "Nessuna notizia nuova nelle ultime 24 ore.")));
+  (s.gruppi || []).forEach(g => {
+    if (!(g.voci || []).length) return;
+    sez.append($("div", { class: "foglio" }, g.titolo ? $("h3", {}, g.titolo) : null, elenco(g.voci)));
+  });
+  main.append(sez);
+});
+if (ED.spunti && ED.spunti.length) {
+  nav.append($("a", { href: "#spunti" }, "Spunti", $("b", {}, String(ED.spunti.length))));
+  const ol = $("ol");
+  ED.spunti.forEach(s => ol.append($("li", { class: "spunto" }, $("div", { class: "num" }, String(s.n)), $("p", {}, s.testo))));
+  main.append($("section", { id: "spunti", class: "spunti" },
+    sezTesta("Spunti per il circolo"),
+    $("p", { class: "sez-nota" }, "Notizie da cui può nascere un comunicato, un post o una presa di posizione locale."),
+    $("div", { class: "foglio" }, ol),
+    $("p", { class: "istruzione" }, "Scrivi a Claude “comunicato sulla N” o “post sulla N”: riapre la fonte e prepara la bozza.")));
+}
+if (ED.whatsapp) {
+  nav.append($("a", { href: "#whatsapp" }, "Messaggio"));
+  const testo = $("pre", { class: "wa-testo" }, ED.whatsapp);
+  const copia = $("button", { type: "button", class: "wa-btn", id: "wa-copia" }, "Copia testo");
+  copia.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(ED.whatsapp); copia.textContent = "Copiato ✓"; }
+    catch (e) { const r = document.createRange(); r.selectNodeContents(testo); const s = getSelection(); s.removeAllRanges(); s.addRange(r); copia.textContent = "Testo selezionato, ora copialo"; }
+  });
+  main.append($("section", { id: "whatsapp" },
+    sezTesta("Messaggio da girare"),
+    $("p", { class: "sez-nota" }, "Messaggio pronto con il link fisso della rassegna: chi lo apre vede sempre l'ultima edizione."),
+    $("div", { class: "foglio" }, $("div", { class: "wa-box" }, testo, $("div", { class: "wa-azioni" }, copia)))));
+}
+
+const piede = document.getElementById("piede");
+if (ED.fonti_saltate && ED.fonti_saltate.length) {
+  const ul = $("ul"); ED.fonti_saltate.forEach(f => ul.append($("li", {}, f)));
+  piede.append($("h2", {}, "Fonti non raggiungibili oggi"), ul);
+}
+if (ED.monitorati) {
+  const box = $("div", { class: "monitor" });
+  ED.monitorati.forEach(m => box.append($("p", {}, $("strong", {}, m.gruppo + ": "), m.nomi)));
+  piede.append($("details", {}, $("summary", {}, "Chi seguiamo e da quali fonti"), box));
+}
+if (ED.nota) piede.append($("p", {}, ED.nota));
+</script>
+
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+(() => {
+  const installata = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+  let chiuso = false; try { chiuso = localStorage.getItem("installa-chiuso") === "1"; } catch (e) {}
+  if (installata || chiuso) return;
+  const box = document.createElement("div"); box.className = "installa"; box.setAttribute("role", "note");
+  const img = document.createElement("img"); img.src = "icone/icon-192.png"; img.alt = "";
+  const p = document.createElement("p");
+  const no = document.createElement("button"); no.type = "button"; no.className = "no"; no.setAttribute("aria-label", "Chiudi"); no.textContent = "×";
+  no.onclick = () => { box.remove(); try { localStorage.setItem("installa-chiuso", "1"); } catch (e) {} };
+  const mostra = () => { box.append(img, p, no); document.querySelector(".wrap").prepend(box); };
+  const ios = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  if (ios) { p.innerHTML = "<strong>Installa l'app:</strong> tocca Condividi <span aria-hidden=\"true\">(il quadrato con la freccia)</span> e poi «Aggiungi alla schermata Home»."; mostra(); return; }
+  addEventListener("beforeinstallprompt", ev => {
+    ev.preventDefault();
+    p.innerHTML = "<strong>Installa l'app</strong> per aprire la rassegna con un tocco.";
+    const si = document.createElement("button"); si.type = "button"; si.className = "si"; si.textContent = "Installa";
+    si.onclick = async () => { ev.prompt(); await ev.userChoice; box.remove(); };
+    p.after(si); mostra(); box.insertBefore(si, no);
+  });
+})();
+</script>
+</body>
+</html>
