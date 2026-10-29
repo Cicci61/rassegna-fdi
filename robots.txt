@@ -1,2 +1,13 @@
+# Motori di ricerca: fuori (la rassegna non va su Google).
+# Social: dentro, solo per leggere titolo e immagine di anteprima quando si condivide il link.
+User-agent: facebookexternalhit
+User-agent: Facebot
+User-agent: meta-externalagent
+User-agent: Twitterbot
+User-agent: LinkedInBot
+User-agent: TelegramBot
+User-agent: WhatsApp
+Allow: /
+
 User-agent: *
 Disallow: /
